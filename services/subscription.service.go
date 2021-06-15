@@ -10,13 +10,16 @@ type SubscriptionService struct {
 	SubscriptionRepo *repository.SubscriptionRepository
 }
 
-func (subService *SubscriptionService) GetUserSubscriptions(userId string) ([]types.Subscription, error) {
+func (subService *SubscriptionService) GetUserSubscriptions(userId string) (*[]types.Subscription, error) {
 	log.Print("getting subscription by user id")
 	// Get subscriptions by user id
+	subscriptions, err := subService.SubscriptionRepo.GetSubscriptionsByUserId(userId)
+	// Handle error
+	if err != nil {
+		return nil, err
+	}
 
-	// Handle error
 	// Convert result set into subscriptions with a mapper
-	// Handle error
 	// Return array of subscriptions
-	return nil, nil
+	return subscriptions, nil
 }
