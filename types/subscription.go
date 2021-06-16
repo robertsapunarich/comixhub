@@ -5,3 +5,8 @@ type Subscription struct {
 	User  User   `json:"user"`
 	Title Title  `json:"title"`
 }
+
+type SubscriptionPostType struct {
+	UserID  string `json:"userId"`
+	TitleID string `json:"titleId"`
+}

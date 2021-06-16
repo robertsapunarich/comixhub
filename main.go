@@ -35,6 +35,6 @@ func main() {
 	userHandler := handlers.NewUserHandler(subscriptionService)
 
 	router.HandleFunc("/user/{id}/subscriptions", userHandler.GetUserSubscriptionsHandler).Methods("GET")
-	router.HandleFunc("/hello", handlers.HelloHandler).Methods("GET")
+	router.HandleFunc("/user/{id}/subscriptions", userHandler.PostUserSubscriptionsHandler).Methods("POST")
 	log.Fatal(http.ListenAndServe("localhost:"+os.Getenv("SERVERPORT"), router))
 }

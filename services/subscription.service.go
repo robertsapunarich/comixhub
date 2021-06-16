@@ -23,3 +23,9 @@ func (subService *SubscriptionService) GetUserSubscriptions(userId string) (*[]t
 	// Return array of subscriptions
 	return subscriptions, nil
 }
+
+func (subservice *SubscriptionService) CreateUserSubscription(subscriptionPost types.SubscriptionPostType) (*[]types.Subscription, error) {
+	log.Print("creating subscription...")
+
+	return nil, nil
+}
